@@ -1,19 +1,46 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
 
 class SolutionCard extends Component {
 
+  getImage() {
+    const { imageSrc, heading } = this.props;
+
+    if (!imageSrc) {
+      return null;
+    }
+
+    return (
+      <img
+        src={{imageSrc}}
+        className="br-100 h4 w4 dib ba b--black-05 pa2"
+        title={{heading}}
+        alt={{heading}}
+      />
+    )
+  }
+
   render() {
+    const { content, heading } = this.props;
+
     return (
       <article className="dtc-ns mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
         <div className="tc">
-          <img src="http://tachyons.io/img/avatar_1.jpg" className="br-100 h4 w4 dib ba b--black-05 pa2" title="Photo of a kitty staring at you"/>
-          <h1 className="f3 mb2">Mimi W.</h1>
-          <h2 className="f5 fw4 gray mt0">CCO (Chief Cat Officer)</h2>
+          {this.getImage()}
+          <h1 className="f3 mb2">{content}</h1>
+          <h2 className="f5 fw4 gray mt0">{heading}</h2>
         </div>
       </article>
     );
   }
 }
+
+SolutionCard.propTypes = {
+  imageSrc: PropTypes.string,
+  heading: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
+};
 
 
 export default SolutionCard;

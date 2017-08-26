@@ -40,9 +40,9 @@ class Content extends Component {
   getSolution() {
     return (
       <div className="dt-ns dt--fixed-ns">
-        <SolutionCard/>
-        <SolutionCard/>
-        <SolutionCard/>
+        <SolutionCard heading="123" content="This is point 1"/>
+        <SolutionCard heading="pt 2" content="This is point 2"/>
+        <SolutionCard heading="pt 3" content="This is point 3"/>
       </div>
     );
   }
