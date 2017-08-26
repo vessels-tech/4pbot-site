@@ -14,7 +14,7 @@ class SolutionCard extends Component {
     return (
       <img
         src={{imageSrc}}
-        className="br-100 h4 w4 dib ba b--black-05 pa2"
+        className="br-100 h4 w4 dib ba pa2"
         title={{heading}}
         alt={{heading}}
       />
@@ -25,7 +25,7 @@ class SolutionCard extends Component {
     const { content, heading } = this.props;
 
     return (
-      <article className="dtc-ns mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+      <article className="dtc-ns mw5 center br3 pa3 pa4-ns mv3 ma1">
         <div className="tc">
           {this.getImage()}
           <h1 className="f3 mb2">{content}</h1>
