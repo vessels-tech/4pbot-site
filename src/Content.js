@@ -49,7 +49,22 @@ class Content extends Component {
 
   getLearnMore() {
     return (
-      <div> Learn more</div>
+      <div className="w-100 bg-white pt5 bg-washed-green">
+        <article className="mw7 center ph3 ph5-ns tc br2 pv5 dark-green">
+          <h1 className="fw6 f3 f2-ns lh-title mt0 mb3">
+            Learn more about 4PBot.
+          </h1>
+          <p className="fw1 f5 mt0 mb3">
+            Sign up for early access.
+          </p>
+          <div>
+            <a className="f6 br-pill bg-dark-green no-underline washed-green ba b--dark-green grow pv2 ph3 dib mr3"
+              href="#">
+              Sign Up
+            </a>
+          </div>
+        </article>
+      </div>
     );
   }
 
