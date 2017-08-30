@@ -22,9 +22,9 @@ class ChatWindow extends Component {
     return (
       <div className="fl w-10 pa2">
         <img
-          src="http://tachyons.io/img/avatar_1.jpg"
+          src="/img/4p_logo_1.png"
           className="br-100  dib"
-          title="Photo of a kitty staring at you"
+          title="4p bot logo"
         />
       </div>
     );
@@ -73,7 +73,7 @@ class ChatWindow extends Component {
 
   render() {
     return (
-      <div className="db mw6 center pv2 pv3-m pv4-ns pa1-ns">
+      <div className="db mw6 center pv2 pv3-m pv4-ns pa2">
         {this.getHeader()}
         {this.getContent()}
       </div>

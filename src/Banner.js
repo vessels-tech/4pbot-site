@@ -18,7 +18,7 @@ class Banner extends Component {
           </p>
           <div>
             <a className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph4 dib mr3"
-              href="#">
+              href="http://eepurl.com/c1sEkj" target="blank">
               Sign Up
             </a>
           </div>

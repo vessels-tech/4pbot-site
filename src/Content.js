@@ -35,8 +35,19 @@ class Content extends Component {
           <div className="dtc v-top pl3">
             <h2>The 4Ps</h2>
             <ul className="lh-copy mv0 f5">
-              <li>4Ps (Pantawid Pamilyang Pilipino Program) or Bridging Program for the Filipino Family is a CCT program by the ___</li>
-              <li>It supports over 4 million clients, across __ provinces</li>
+              <li className="pv1">
+                4Ps, or Pantawid Pamilyang Pilipino Program is a CCT program run by the Department of Social Welfare and Development.
+              </li>
+              <li className="pv1">It supports over 4 million households, across 79 provinces with cash grants, based on a number of conditions, such as school attendance and attending health clinics.</li>
+              <li className="pv1">
+                4Ps aims to break the cycle of poverty by keeping children aged 0-18 healthy and in school, so they can have a better future.
+                (<a
+                 href="http://www.worldbank.org/en/country/philippines/brief/faqs-about-the-pantawid-pamilyang-pilipino-program"
+                 target="blank"
+                 >
+                   World Bank 2017
+               </a>)
+              </li>
             </ul>
           </div>
           <div className="dtc v-top mb4">
@@ -47,15 +58,20 @@ class Content extends Component {
           <div className="dtc v-top pl3">
             <h2>The Challenge</h2>
             <ul className="lh-copy mv0 f5">
-              <li>Low income people often find it difficult to navigate Government systems (ref:)</li>
-              <li>Many (how many?) 4Ps clients miss out on payments because they don't attend important sessions, or fufill other criteria</li>
-              <li>When something goes wrong with payments, it can sometimes take months to resolve these issues</li>
-              <li>4Ps clients are taking payday loans and ...</li>
-              <li>Getting cach to this many people across so many provinces is really hard!</li>
+              <li className="pv1">
+                Low income people often find it difficult to navigate formal financial systems and services.
+                 (<a
+                  href="http://www.cgap.org/news/cgap-report-analyzes-digital-finance-risks-customers"
+                  target="blank"
+                  >
+                    CGAP 2014
+                </a>)
+              </li>
+              <li className="pv1">Many 4Ps clients miss out on payments because they don't attend important family development sessions, or fufill other criteria.</li>
+              <li className="pv1">When a client believes they have been underpaid or assessed incorrectly, it can often take months to resolve.</li>
+              {/* <li>4Ps clients are/ taking payday loans and ...</li> */}
+              {/* <li>Getting cash to this many people across so many provinces is really hard!</li> */}
             </ul>
-          </div>
-          <div className="dtc v-top mb4">
-            {/* <img src="/img/4ps_logo.jpg" alt="Pantawid Pamilya Logo" className="mw4 db" /> */}
           </div>
         </div>
       </div>
@@ -66,24 +82,38 @@ class Content extends Component {
     return (
       <div className="tc bg-light-red light-blue pv5">
         <h2 className="gray w6 f4 f3-ns lh-title mt0 mb3">Our Ideas</h2>
-        <p className="lh-copy w-50-ns center f3 f2-ns b ml0 ph1">We're actively researching the 4Ps program, looking for places
+        <p className="lh-copy w-50-ns w-75-m center f3 f2-ns b ml0 ph1">We're actively researching the 4Ps program, looking for places
           to leverage technology to improve the 4Ps program for its clients.</p>
         <p className="gray lh-copy w-50-ns center pt2 f4 f3-ns i ml0">Here's what we've got so far:</p>
-        <div className="dt-ns dt--fixed-ns">
-          <SolutionCard heading="1" content="A connected knowledge base where clients can easily ask questions and receive answers"/>
-          <SolutionCard heading="2" content="A tool for automatically reminding households of important family development sessions, health clinic visits ... so that nobody misses out on payments."/>
-          <SolutionCard heading="3" content="Use AI and chatbots to make filing a grievance and resoling the issue simpler and faster."/>
+        <div className="dt-ns dt--fixed-ns gray">
+          <SolutionCard
+            heading="1"
+            content="A connected knowledge base where clients can easily ask questions and receive answers.">
+            <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
+          </SolutionCard>
+          <SolutionCard
+            heading="2"
+            content="An automated reminders tool to inform families of important family development sessions, health clinic visits and 4Ps news.">
+            <i className="fa fa-calendar f1 pb4" aria-hidden="true"></i>
+          </SolutionCard>
+          <SolutionCard
+            heading="3"
+            content="Use AI and chatbots to make filing a grievance and resoling the issue simpler and faster.">
+            <i className="fa fa-comments f1 pb4" aria-hidden="true"></i>
+          </SolutionCard>
         </div>
         <article className="mw7 center ph3 ph5-ns tc br2 pv5">
           <h1 className="fw6 f3 f2-ns lh-title mt0 mb3">
             Got an idea?
           </h1>
           <p className="fw1 f5 mt0 mb3">
-            Get in touch.
+            We'd love to hear it.
           </p>
           <div>
-            <a className="f6 br-pill bg-light-blue no-underline washed-red ba b--light-blue grow pv2 ph3 dib mr3"
-              href="#">
+            <a
+              className="f6 br-pill bg-light-blue no-underline washed-red ba b--light-blue grow pv2 ph3 dib mr3"
+              href="mailto:lewisdaly@vesselstech.com?Subject=4PBot%Ideas"
+              >
               Email Us
             </a>
           </div>
@@ -103,12 +133,17 @@ class Content extends Component {
             Sign up for email updates, or get in touch with us.
           </p>
           <div>
-            <a className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
-              href="#">
+            <a
+              className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
+              href="http://eepurl.com/c1sEkj"
+              target="blank"
+            >
               Sign Up
             </a>
-            <a className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
-              href="#">
+            <a
+              className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
+              href="mailto:lewisdaly@vesselstech.com?Subject=4PBot%20Contact"
+            >
               Get In Touch
             </a>
           </div>
