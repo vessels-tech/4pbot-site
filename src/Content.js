@@ -5,18 +5,23 @@ import SolutionCard from './SolutionCard'
 class Content extends Component {
 
   getSupportedBy() {
+
+    const greyStyle = {
+      filter: 'grayscale(100%)',
+    };
+
     return (
       <div className="bg-light-red tc light-blue">
         <p className="near-black pt4 mv0">Supported by:</p>
         <div className="dt dt--fixed">
           <div className="dtc tc pv4">
-            Vessels
+            <img style={greyStyle} src="/img/vessels_rough.png"/>
           </div>
           <div className="dtc tc pv4">
-            DFS Lab
+            <img style={greyStyle} src="/img/dfs_lab_logo_rough.png"/>
           </div>
           <div className="dtc tc pv4">
-            B&M Gates
+            <img style={greyStyle} src="/img/gates_logo.png"/>
           </div>
         </div>
       </div>
