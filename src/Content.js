@@ -12,7 +12,7 @@ class Content extends Component {
 
     return (
       <div className="bg-light-red tc light-blue">
-        <p className="near-black pt4 mv0">Supported by:</p>
+        <p className="near-black pt4 mv0 f6 db ttu tracked">Supported by:</p>
         <div className="dt dt--fixed">
           <div className="dtc tc pa4-ns pa2">
             <p style={{font:'helvetica-neue'}} className="f3 f1-m f1-ns dark-gray b">Vessels Tech</p>
@@ -31,7 +31,7 @@ class Content extends Component {
   getChallenge() {
     return (
       <div className="bg-white w-100">
-        <div className="dt mw6 center pt5 pv5-m pv6-ns">
+        <div className="dt mw6 center pt5 pt5-m pt6-ns pb4">
           <div className="dtc v-top pl3">
             <h2>The 4Ps</h2>
             <ul className="lh-copy mv0 f5">
@@ -43,7 +43,7 @@ class Content extends Component {
             <img src="/img/4ps_logo.jpg" alt="Pantawid Pamilya Logo" className="mw4 db" />
           </div>
         </div>
-        <div className="dt mw6 center pb5 pv5-m pv6-ns">
+        <div className="dt mw6 center pb5 pb5-m pb6-ns pt4">
           <div className="dtc v-top pl3">
             <h2>The Challenge</h2>
             <ul className="lh-copy mv0 f5">
@@ -66,7 +66,7 @@ class Content extends Component {
     return (
       <div className="tc bg-light-red light-blue pv5">
         <h2 className="gray w6 f4 f3-ns lh-title mt0 mb3">Our Ideas</h2>
-        <p className="lh-copy w-50-ns center f3 f2-ns b ml0">We're actively researching the 4Ps program, looking for places
+        <p className="lh-copy w-50-ns center f3 f2-ns b ml0 ph1">We're actively researching the 4Ps program, looking for places
           to leverage technology to improve the 4Ps program for its clients.</p>
         <p className="gray lh-copy w-50-ns center pt2 f4 f3-ns i ml0">Here's what we've got so far:</p>
         <div className="dt-ns dt--fixed-ns">
@@ -74,6 +74,20 @@ class Content extends Component {
           <SolutionCard heading="2" content="A tool for automatically reminding households of important family development sessions, health clinic visits ... so that nobody misses out on payments."/>
           <SolutionCard heading="3" content="Use AI and chatbots to make filing a grievance and resoling the issue simpler and faster."/>
         </div>
+        <article className="mw7 center ph3 ph5-ns tc br2 pv5">
+          <h1 className="fw6 f3 f2-ns lh-title mt0 mb3">
+            Got an idea?
+          </h1>
+          <p className="fw1 f5 mt0 mb3">
+            Get in touch.
+          </p>
+          <div>
+            <a className="f6 br-pill bg-light-blue no-underline washed-red ba b--light-blue grow pv2 ph3 dib mr3"
+              href="#">
+              Email Us
+            </a>
+          </div>
+        </article>
       </div>
     );
   }
@@ -86,12 +100,16 @@ class Content extends Component {
             Learn more about 4PBot.
           </h1>
           <p className="fw1 f5 mt0 mb3">
-            Sign up for early access.
+            Sign up for email updates, or get in touch with us.
           </p>
           <div>
             <a className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
               href="#">
               Sign Up
+            </a>
+            <a className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
+              href="#">
+              Get In Touch
             </a>
           </div>
         </article>

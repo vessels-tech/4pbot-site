@@ -31,8 +31,8 @@ class ChatWindow extends Component {
   }
 
   getRow(type, content, idx) {
-    let typeClass = "fw2 f6 pa2 mv0 br4 fl w-90 pa2";
-    let float = "mt3 ";
+    let typeClass = "fw2 f6 pa2 br4 fl w-90 pa1 mv0";
+    let float = " ";
     let avatar = null;
 
     switch (type) {
@@ -48,7 +48,7 @@ class ChatWindow extends Component {
     }
 
     return (
-      <div className="w-100 pa2 mb4 w5">
+      <div className="dib w-100 pa1 w5">
         <div className={float}>
           {avatar}
           <p className={typeClass}>{content}</p>
@@ -63,7 +63,9 @@ class ChatWindow extends Component {
         {this.getRow(RowType.SENT, "Hi there!")}
         {this.getRow(RowType.RECEIVED, "Hi, how can I help you?")}
         {this.getRow(RowType.SENT, "I just had a baby boy! How can I update my details with 4Ps?")}
-        {this.getRow(RowType.RECEIVED, "Congrats! We can help you take care of it. You will need your son's birth certificate.")}
+        {this.getRow(RowType.RECEIVED, `Congrats!
+
+           We can help you update your 4Ps details. You will need your son's birth certificate.`)}
         {/* {this.getRow(RowType.SENT, ".")} */}
       </div>
     );
