@@ -32,7 +32,7 @@ class ChatWindow extends Component {
 
   getRow(type, content, idx) {
     let typeClass = "fw2 f6 pa2 mv0 br4 fl w-90 pa2";
-    let float = "";
+    let float = "mt3 ";
     let avatar = null;
 
     switch (type) {
@@ -61,17 +61,17 @@ class ChatWindow extends Component {
     return (
       <div className="bg-white-90 pb4">
         {this.getRow(RowType.SENT, "Hi there!")}
-        {this.getRow(RowType.RECEIVED, "Hi there, how can I help you?")}
-        {this.getRow(RowType.SENT, "I'm looking for help with x")}
-        {this.getRow(RowType.RECEIVED, "Do you want me to find more information about that for you?")}
-        {this.getRow(RowType.SENT, "Yes Please! Thanks.")}
+        {this.getRow(RowType.RECEIVED, "Hi, how can I help you?")}
+        {this.getRow(RowType.SENT, "I just had a baby boy! How can I update my details with 4Ps?")}
+        {this.getRow(RowType.RECEIVED, "Congrats! We can help you take care of it. You will need your son's birth certificate.")}
+        {/* {this.getRow(RowType.SENT, ".")} */}
       </div>
     );
   }
 
   render() {
     return (
-      <div className="db mw6 center pv5 pv5-m pv6-ns pa4 pa1-ns">
+      <div className="db mw6 center pv2 pv3-m pv4-ns pa1-ns">
         {this.getHeader()}
         {this.getContent()}
       </div>

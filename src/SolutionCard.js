@@ -24,12 +24,13 @@ class SolutionCard extends Component {
   render() {
     const { content, heading } = this.props;
 
+    //TODO: Add some lame icons...
     return (
       <article className="dtc-ns mw5 center br3 pa3 pa4-ns mv3 ma1">
         <div className="tc">
           {this.getImage()}
-          <h1 className="f3 mb2">{content}</h1>
-          <h2 className="f5 fw4 gray mt0">{heading}</h2>
+          {/* <h1 className="f3 mb2">{heading}</h1> */}
+          <h2 className="f4 fw4 gray mt0">{content}</h2>
         </div>
       </article>
     );
