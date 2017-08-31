@@ -9,7 +9,7 @@ class ChatWindow extends Component {
 
   getHeader() {
     return (
-      <header className="tc bg-white-70 w-100 ph3 pv1 ph4-m ph5-l dark-gray">
+      <header className="br3 br--top tc bg-white-70 w-100 ph3 pv1 ph4-m ph5-l dark-gray">
         <nav className="">
           <h3 className="f6 mv0">4PBot</h3>
           <p className="f7 lh-copy mv0 tracked-tight moon-gray fw2">Active Now</p>
@@ -59,7 +59,7 @@ class ChatWindow extends Component {
 
   getContent() {
     return (
-      <div className="bg-white-90 pb4">
+      <div className="br3 br--bottom bg-white-90 pb4">
         {this.getRow(RowType.SENT, "Hi there!")}
         {this.getRow(RowType.RECEIVED, "Hi, how can I help you?")}
         {this.getRow(RowType.SENT, "I just had a baby boy! How can I update my details with 4Ps?")}
