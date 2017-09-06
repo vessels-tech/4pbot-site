@@ -1,11 +1,48 @@
 import React, { Component } from 'react'
 
-const RowType = {
-  SENT: 0,
-  RECEIVED: 1
-};
+import ChatRowType from './ChatRowType'
+import ChatRow from './ChatRow'
 
 class ChatWindow extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      pendingText: '',
+      rows: [
+        {type: ChatRowType.SENT, content:'Hi there!'},
+        {type: ChatRowType.RECEIVED, content:'Hi, how can I help you?'},
+        {type: ChatRowType.SENT, content:'I just had a baby boy! How can I update my details with 4Ps? I really need to make this text longer.'},
+        {type: ChatRowType.RECEIVED, content:'Congrats! We can help you update your 4Ps details. You will need your son\'s birth certificate.'}
+      ]
+    };
+  }
+
+  handleChange(event) {
+
+    this.setState({
+      pendingText: event.target.value
+    });
+  }
+
+  submitText() {
+    const rows = this.state.rows;
+
+    if (this.state.pendingText.strip === '') {
+      return;
+    }
+
+    rows.push({
+      type: ChatRowType.SENT,
+      content: this.state.pendingText
+    });
+
+    this.setState({
+      pendingText: '',
+      rows
+    });
+  }
 
   getHeader() {
     return (
@@ -18,55 +55,51 @@ class ChatWindow extends Component {
     )
   }
 
-  getAvatar() {
-    return (
-      <div className="fl w-10 pa2">
-        <img
-          src="/img/4p_logo_1.png"
-          className="br-100  dib"
-          title="4p bot logo"
-        />
-      </div>
-    );
-  }
+  getChatRows() {
+    const { rows } = this.state;
 
-  getRow(type, content, idx) {
-    let typeClass = "fw2 f6 pa2 br4 fl w-90 pa1 mv0";
-    let float = " ";
-    let avatar = null;
-
-    switch (type) {
-      case RowType.SENT:
-        typeClass += " bg-light-blue white-90 tl fr";
-        float += " fr";
-        break;
-      case RowType.RECEIVED:
-      default:
-        typeClass += " bg-light-gray near-black tl mw5 fl";
-        float += " ";
-        avatar = this.getAvatar();
-    }
-
-    return (
-      <div className="dib w-100 pa1 w5">
-        <div className={float}>
-          {avatar}
-          <p className={typeClass}>{content}</p>
-        </div>
-      </div>
-    );
+    return rows.map(row => {
+      return (
+        <ChatRow
+          key={row.content}
+          rowType={row.type}
+          content={row.content}/>
+      );
+    });
   }
 
   getContent() {
     return (
-      <div className="br3 br--bottom bg-white-90 pb4">
-        {this.getRow(RowType.SENT, "Hi there!")}
-        {this.getRow(RowType.RECEIVED, "Hi, how can I help you?")}
-        {this.getRow(RowType.SENT, "I just had a baby boy! How can I update my details with 4Ps?")}
-        {this.getRow(RowType.RECEIVED, `Congrats!
+      <div className="bg-white-90 pb4">
+          {this.getChatRows()}
+      </div>
+    );
+  }
 
-           We can help you update your 4Ps details. You will need your son's birth certificate.`)}
-        {/* {this.getRow(RowType.SENT, ".")} */}
+  getInput() {
+    return (
+      <div className="br3 br--bottom bg-white-90 pb4 w-100">
+        <div className="mw9 center ph3-ns">
+          <div className="cf ph2-ns">
+            <div className="fl w-80 ph1">
+              <input
+                className="w-100 h2 f6 pa1"
+                value={this.state.pendingText}
+                onChange={event => this.handleChange(event)}
+                type="text"
+                placeholder="Write a message"
+              />
+            </div>
+            <div className="fl w-20 ph2">
+              <button
+                onClick={() => this.submitText()}
+                className="h2 f6 w-100 br3 bg-light-blue no-underline white-90 ba b--light-blue grow pv2"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -76,6 +109,7 @@ class ChatWindow extends Component {
       <div className="db mw6 center pv2 pv3-m pv4-ns pa2">
         {this.getHeader()}
         {this.getContent()}
+        {this.getInput()}
       </div>
     );
   }
