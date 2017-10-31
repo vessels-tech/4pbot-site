@@ -70,7 +70,7 @@ class ChatWindow extends Component {
 
   getContent() {
     return (
-      <div className="bg-white-90 pb4">
+      <div className="bg-white-90 br3 br--bottom pb4">
           {this.getChatRows()}
       </div>
     );
@@ -106,10 +106,11 @@ class ChatWindow extends Component {
 
   render() {
     return (
-      <div className="db mw6 center pv2 pv3-m pv4-ns pa2">
+      <div className="db mw6 center pv2 pv3-m pv4-ns pa2 ph4">
         {this.getHeader()}
         {this.getContent()}
-        {this.getInput()}
+        {/*  Hiding this for now, we can add it back later*/}
+        {/* {this.getInput()} */}
       </div>
     );
   }
