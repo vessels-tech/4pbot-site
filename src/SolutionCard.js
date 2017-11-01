@@ -31,7 +31,7 @@ class SolutionCard extends Component {
           {this.props.children}
           {this.getImage()}
           {/* <h1 className="f3 mb2">{heading}</h1> */}
-          <h2 className="f4 fw4 gray mt0">{content}</h2>
+          <h2 className="f4 fw4 washed-blue mt0">{content}</h2>
         </div>
       </article>
     );

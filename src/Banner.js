@@ -11,8 +11,18 @@ class Banner extends Component {
             4PBot
           </h1>
           <h2 className="fw2 f4 lh-copy mt0 mb3">
-            Tackling Financial Inclusion in the Philippines. With a chatbot.
+            A chatbot for Filipinos on social welfare.
           </h2>
+
+          <a className="f6 br-pill bg-light-red no-underline lightest-blue ba b--light-red grow pv2 ph4 dib mr3"
+            href="http://eepurl.com/c1sEkj" target="blank">
+            Learn More
+          </a>
+          <a className="f6 br-pill bg-light-red no-underline lightest-blue ba b--light-red grow pv2 ph4 dib mr3"
+            href="http://eepurl.com/c1sEkj" target="blank">
+            Partner with us
+          </a>
+
           {/* <p className="fw1 f5 mt0 mb3">
             Sign up for email updates.
           </p> */}
