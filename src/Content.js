@@ -10,6 +10,35 @@ const getNiceHeading = (text) => {
 
 class Content extends Component {
 
+	getWhyChatbot() {
+
+		return (
+			<div className="bg-white w-100">
+				<div className="dt mw6 center pt1 pb4">
+					<div className="dtc v-top">
+						{getNiceHeading("A Chatbot?")}
+						<div className="lh-copy mv0 f5 ph4">
+
+							<p className="f5 lh-copy measure-narrow">
+								Low income people often find it difficult to navigate formal financial systems and services.
+								 (<a
+									href="http://www.cgap.org/news/cgap-report-analyzes-digital-finance-risks-customers"
+									target="blank"
+									>
+										CGAP 2014
+								</a>)
+							</p>
+
+							<p className="f5 lh-copy measure-narrow">
+								4PBot aims to empower and assist clients on the 4Ps to better understand, navigate and ____ the 4Ps
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+
   getSupportedBy() {
 
     const greyStyle = {
@@ -42,15 +71,15 @@ class Content extends Component {
             {getNiceHeading("The 4ps:")}
             <div className="lh-copy mv0 f5 ph4">
 
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 4Ps, or Pantawid Pamilyang Pilipino Program is a CCT program run by the Department of Social Welfare and Development.
               </p>
 
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 It supports over 4 million households, across 79 provinces with cash grants, based on a number of conditions, such as school attendance and attending health clinics.
               </p>
 
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 4Ps aims to break the cycle of poverty by keeping children aged 0-18 healthy and in school, so they can have a better future.
                 (<a
                  href="http://www.worldbank.org/en/country/philippines/brief/faqs-about-the-pantawid-pamilyang-pilipino-program"
@@ -71,7 +100,7 @@ class Content extends Component {
             {getNiceHeading("Why build 4pbot?")}
             <div className="lh-copy mv0 f5 ph4">
 
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 Low income people often find it difficult to navigate formal financial systems and services.
                  (<a
                   href="http://www.cgap.org/news/cgap-report-analyzes-digital-finance-risks-customers"
@@ -81,7 +110,7 @@ class Content extends Component {
                 </a>)
               </p>
 
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 4PBot aims to empower and assist clients on the 4Ps to better understand, navigate and ____ the 4Ps
               </p>
             </div>
@@ -92,7 +121,7 @@ class Content extends Component {
           <div className="dtc v-top">
             {getNiceHeading("How?")}
             <div className="lh-copy mv0 f5 ph4">
-              <p class="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure-narrow">
                 Using the latest in chatbot technology, and building up a network of 4Ps members, all connected using 4Pbot.
               </p>
             </div>
@@ -338,13 +367,14 @@ class Content extends Component {
   render() {
     return (
       <div>
-        {this.getSupportedBy()}
-        {this.getBackground()}
-        {this.getFocus()}
-        {this.getQuotes()}
+				{this.getWhyChatbot()}
+				{this.getFocus()}
         {this.getFeatures()}
+				{this.getBackground()}
+				{this.getQuotes()}
         {this.getPartnerWithUs()}
-        {this.getSupportUs()}
+        {/* {this.getSupportUs()} */}
+				{this.getSupportedBy()}
 				{this.getAboutVessels()}
       </div>
     );
