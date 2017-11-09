@@ -17,8 +17,8 @@ class Content extends Component {
 
   getWhyChatBotItem(icon, title, text) {
     return (
-      <div className="center w-100 dtc-ns tc pv4">
-        <article className="fl bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh2-ns">
+      <div className="w-100 dtc-ns tc">
+        <article className="h5 h5-ns bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh2-ns">
           <div className="tc">
             <i className="material-icons">{icon}</i>
             <h1 className="f4">{title}</h1>
@@ -214,6 +214,7 @@ class Content extends Component {
               <FeatureCard
                 heading='Payday Estimates'
                 content='We crowdsource paydays across the Philippines to give accurate estimates of when the next payday will occour.'
+                displayLeft={false}
                 >
                 <ChatWindow rows={estimate}/>
               </FeatureCard>
@@ -223,6 +224,7 @@ class Content extends Component {
               <FeatureCard
                 heading='Secret Reports'
                 content='Clients can make complaints and report issues they are having with 4Ps. We try to help find a solution, while keeping their information secure and private.'
+                displayLeft={true}
                 >
                 <ChatWindow rows={report}/>
               </FeatureCard>
@@ -232,6 +234,7 @@ class Content extends Component {
               <FeatureCard
                 heading='4Ps News'
                 content="4PBot knows what's going on in the community, with the latest news stories about 4Ps."
+                displayLeft={false}
                 >
                 <ChatWindow rows={news}/>
               </FeatureCard>
