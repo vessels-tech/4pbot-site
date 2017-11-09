@@ -70,13 +70,13 @@ class Content extends Component {
       <div className="bg-white tc light-blue">
         {getNiceHeading("Supported By")}
         <div className="dt dt--fixed">
-          <div className="dtc tc pa4-ns pa1">
+          <div className="dtc tc ph5-ns pa1">
             <p style={{font:'helvetica-neue'}} className="f3 f1-m f1-ns dark-gray b">Vessels Tech</p>
           </div>
-          <div className="dtc tc pa4-ns pa1 v-mid">
+          <div className="dtc tc ph5-ns pa1 v-mid">
             <img style={greyStyle} src="/img/dfs_lab_logo_1.png"/>
           </div>
-          <div className="dtc tc pa4-ns pa1 v-mid">
+          <div className="dtc tc ph5-ns pa1 v-mid">
             <img style={greyStyle} src="/img/gates_logo.png"/>
           </div>
         </div>
@@ -300,7 +300,7 @@ class Content extends Component {
 					<h2 className="fw6 f4 lh-title mt0 mb3">
 						About Vessels Tech
 					</h2>
-          <p className="f5 measure-narrow pb2">
+          <p className="center f5 measure-narrow pb2">
             Vessels Tech is a team of motivated technologists passionate about using technology
             to lift up the lives of others.
 					</p>
