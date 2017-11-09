@@ -9,7 +9,7 @@ class ChatRow extends Component {
     return (
       <div className="fl w-10 pa2 v-mid">
         <img
-          src="/img/4p_logo_1.png"
+          src="/img/face.png"
           className="br-100"
           title="4p bot logo"
         />

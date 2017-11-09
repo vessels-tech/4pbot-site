@@ -132,7 +132,7 @@ class Content extends Component {
               </p>
 
               <p className="f5 lh-copy measure-narrow">
-                4PBot aims to empower and assist clients on the 4Ps to better understand, navigate and ____ the 4Ps
+                4PBot assists clients of the 4Ps to better understand, navigate and speak up about the 4Ps.
               </p>
             </div>
           </div>
@@ -205,7 +205,7 @@ class Content extends Component {
     ]
 
     return (
-      <div id='features' className="tc bg-light-red w-100 light-blue">
+      <div id='features' className="tc bg-light-red w-100 mid-gray">
         <div className="pv3 dt center">
           <div className="dtc v-top">
             <p className="tc gray mv0 pt3 f5 db ttu tracked pb1 b">Features</p>
