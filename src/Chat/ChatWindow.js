@@ -10,12 +10,7 @@ class ChatWindow extends Component {
 
     this.state = {
       pendingText: '',
-      rows: [
-        {type: ChatRowType.SENT, content:'Hi there!'},
-        {type: ChatRowType.RECEIVED, content:'Hi, how can I help you?'},
-        {type: ChatRowType.SENT, content:'I just had a baby boy! How can I update my details with 4Ps? I really need to make this text longer.'},
-        {type: ChatRowType.RECEIVED, content:'Congrats! We can help you update your 4Ps details. You will need your son\'s birth certificate.'}
-      ]
+      rows: this.props.rows,
     };
   }
 
@@ -70,7 +65,7 @@ class ChatWindow extends Component {
 
   getContent() {
     return (
-      <div className="bg-white-90 br3 br--bottom pb4">
+      <div className="bg-white-90 br3 br--bottom">
           {this.getChatRows()}
       </div>
     );
@@ -106,7 +101,7 @@ class ChatWindow extends Component {
 
   render() {
     return (
-      <div className="db mw6 center pv2 pv3-m pv4-ns pa2 ph4">
+      <div className="db mw6 center pv2 pv3-m pv4">
         {this.getHeader()}
         {this.getContent()}
         {/*  Hiding this for now, we can add it back later*/}

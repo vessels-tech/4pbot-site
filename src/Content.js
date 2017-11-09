@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 import SolutionCard from './SolutionCard'
+import FeatureCard from './FeatureCard'
+import ChatWindow from './Chat/ChatWindow'
+import ChatRowType from './Chat/ChatRowType'
+import QuoteSection from './QuoteSection'
 
 const getNiceHeading = (text) => {
   return (
@@ -10,30 +14,47 @@ const getNiceHeading = (text) => {
 
 class Content extends Component {
 
+
+  getWhyChatBotItem(icon, title, text) {
+    return (
+      <div className="center w-100 dtc-ns tc pv4">
+        <article className="fl bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh2-ns">
+          <div className="tc">
+            <i className="material-icons">{icon}</i>
+            <h1 className="f4">{title}</h1>
+            <hr className="mw3 bb bw1 b--black-10"/>
+          </div>
+          <p className="lh-copy measure center f6 black-70">
+            {text}
+          </p>
+        </article>
+      </div>
+    );
+  }
+
+  getWhyChatbotGrid() {
+    return (
+      <div className="dt-ns dt--fixed-ns">
+        {this.getWhyChatBotItem('face', 'Conversational', "Talking to 4Pbot is just like talking to a real person!")}
+        {this.getWhyChatBotItem('query_builder', 'Anytime, Anyplace', '4Pbot is always awake, and always willing to help!')}
+        {this.getWhyChatBotItem('language', 'Multilingual', "4PBot can speak Tagalog, Cebuano/Bisaya, and English. ")}
+      </div>
+    );
+  }
+
+
 	getWhyChatbot() {
 
 		return (
 			<div className="bg-white w-100">
-				<div className="dt mw6 center pt1 pb4">
-					<div className="dtc v-top">
-						{getNiceHeading("A Chatbot?")}
-						<div className="lh-copy mv0 f5 ph4">
-
-							<p className="f5 lh-copy measure-narrow">
-								Low income people often find it difficult to navigate formal financial systems and services.
-								 (<a
-									href="http://www.cgap.org/news/cgap-report-analyzes-digital-finance-risks-customers"
-									target="blank"
-									>
-										CGAP 2014
-								</a>)
-							</p>
-
-							<p className="f5 lh-copy measure-narrow">
-								4PBot aims to empower and assist clients on the 4Ps to better understand, navigate and ____ the 4Ps
-							</p>
-						</div>
-					</div>
+				<div className="dt pt3 pb4">
+					{getNiceHeading("A Chatbot?")}
+					<div className="lh-copy mv0 f5 ph4">
+						<p className="center f5 lh-copy measure-narrow">
+              4PBot talks with clients of the 4Ps program over Facebook Messenger, and is available for free on Facebook Free Basics.
+            </p>
+              {this.getWhyChatbotGrid()}
+          </div>
 				</div>
 			</div>
 		);
@@ -46,8 +67,8 @@ class Content extends Component {
     };
 
     return (
-      <div className="bg-light-red tc light-blue">
-        <p className="near-black pt3 mv0 f6 db ttu tracked">Supported by:</p>
+      <div className="bg-white tc light-blue">
+        {getNiceHeading("Supported By")}
         <div className="dt dt--fixed">
           <div className="dtc tc pa4-ns pa1">
             <p style={{font:'helvetica-neue'}} className="f3 f1-m f1-ns dark-gray b">Vessels Tech</p>
@@ -66,7 +87,7 @@ class Content extends Component {
   getBackground() {
     return (
       <div className="bg-white w-100">
-        <div className="dt mw6 center pt1 pb4">
+        <div className="dt mw6 center pt4 pb4">
           <div className="dtc v-top">
             {getNiceHeading("The 4ps:")}
             <div className="lh-copy mv0 f5 ph4">
@@ -152,156 +173,84 @@ class Content extends Component {
     );
   }
 
-  getFocus() {
-    return (
-      <div className="tc bg-light-red w-100 light-blue">
-        <div className="pv5 dt mw6 center pt1 pb4">
-          <div className="dtc v-top">
-            <p className="tc gray pt3 mv0 f5 db ttu tracked pb1 b">Our Focus</p>
-
-            <div className="lh-copy mv0 f5 ph4">
-              <SolutionCard
-                heading="1"
-                content="Payment Estimator">
-                <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-              </SolutionCard>
-              <p className="f5 lh-copy measure-narrow washed-blue">
-                Payment days can be unpredictable, making managing the household budget difficult. Clients sometimes have to drop everything at the last minute to be able to collect their payout or risk missing out or waiting all day in a line. Different clients have different opinions on what a late payout is…
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   getQuotes() {
     return (
-      <div>
-        <p>
-          “The 4P is a big help in our family, I can now buy things for my children that they can use in school; we can also buy rice, but in the aspect of announcing to us, it is a little harder because sometimes we don’t know when is the payout day, it would be better that they send us an SMS because the parent leader has a lot of things to do, sometimes they cannot tell us all when it is the payout day.”
-        </p>
-        <p>
-          - ????, 4Ps client
-        </p>
-      </div>
+      <QuoteSection
+        className="bg-lightest-blue black"
+        author="Maria, 4Ps client"
+        quote="“The 4P is a big help in our family... but in the aspect of announcing to us, it is a little hard because sometimes we don’t know when the payout day is, it would be better that they send us an SMS...”"
+      />
     );
   }
 
   getFeatures() {
+    const estimate = [
+      {type: ChatRowType.SENT, content:'Kailan aking payout?'},
+      {type: ChatRowType.RECEIVED, content:'Opo, Makakatulong ako niyan'},
+      {type: ChatRowType.RECEIVED, content:'Ako ang iyong zip code?'},
+      {type: ChatRowType.SENT, content:'4000'}
+    ];
+
+    const report = [
+      {type: ChatRowType.SENT, content:'Gustong i-report ang problema.'},
+      {type: ChatRowType.RECEIVED, content: 'Opo, Makakatulong ako niyan.' },
+      {type: ChatRowType.RECEIVED, content: 'Anong po ang iyong problema? (1) hindi nakakatanggap ng tamang halaga (2) mas mababa sa 3 sa aking mga anak ang na-enrol (3) iba pa'},
+      {type: ChatRowType.SENT, content:'1 po'}
+    ];
+
+    const news = [
+      {type: ChatRowType.SENT, content:'Mga bagong balita sa 4Ps?'},
+      {type: ChatRowType.RECEIVED, content: 'Ito ang 3 mga bagong istorya sa 4Ps.' },
+      {type: ChatRowType.RECEIVED, content: 'Dating nakatira sa kalye, nabigyan ng trabaho sa tulong ng libreng training. Si Merry Rose, 29, mula sa Sampalok, Maynila miyembro ng 4P, ay nagtapos na unang batch sa Tile Setting sa TESDA, ngayon ay 7 buwang nagtatrabaho sa isang Construction Firm bilang Tile Setter.'},
+    ]
+
     return (
-      <div className="tc bg-light-red w-100 light-blue">
-        <div className="pv5 dt mw6 center pt1 pb4">
+      <div id='features' className="tc bg-light-red w-100 light-blue">
+        <div className="pv3 dt center">
           <div className="dtc v-top">
-            <p className="tc gray pt3 mv0 f5 db ttu tracked pb1 b">Features</p>
+            <p className="tc gray mv0 pt3 f5 db ttu tracked pb1 b">Features</p>
 
             <div className="lh-copy mv0 f5 ph4">
-              <SolutionCard
-                heading="1"
-                content="Payout Date Estimator">
-                <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-              </SolutionCard>
-              <p className="f5 lh-copy measure-narrow washed-blue">
-                4PBot aggregates payout dates from a variety of sources, and aims to provide an accurate estimate of the next payout date.
-
-              </p>
+              <FeatureCard
+                heading='Payday Estimates'
+                content='We crowdsource paydays across the Philippines to give accurate estimates of when the next payday will occour.'
+                >
+                <ChatWindow rows={estimate}/>
+              </FeatureCard>
             </div>
 
             <div className="lh-copy mv0 f5 ph4">
-              <SolutionCard
-                heading="1"
-                content="Secret Reports">
-                <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-              </SolutionCard>
-              <p className="f5 lh-copy measure-narrow washed-blue">
-                Allows clients to make an anonymous report about an issue they are having with 4Ps. This could be anything from receiving the incorrect payout amount, or… Aggregate and anonymise these data. deliver powerful insights for govt stake holders, improve the program for all, and protect the client.
-              </p>
-            </div>
-
-            <p className="tc gray pt3 mv0 f5 db ttu tracked pb1 b">Upcoming Features</p>
-
-            <div className="lh-copy mv0 f5 ph4">
-              <SolutionCard
-                heading="1"
-                content="Knowledge Base">
-                <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-              </SolutionCard>
-              <p className="f5 lh-copy measure-narrow washed-blue">
-                With over 20,000 people on 4Ps Facebook groups alone, …4Pbot aims to unlock the power of this network by enabling clients to ask for advice, and give advice in a private and secure manner.
-
-              </p>
+              <FeatureCard
+                heading='Secret Reports'
+                content='Clients can make complaints and report issues they are having with 4Ps. We try to help find a solution, while keeping their information secure and private.'
+                >
+                <ChatWindow rows={report}/>
+              </FeatureCard>
             </div>
 
             <div className="lh-copy mv0 f5 ph4">
-              <SolutionCard
-                heading="1"
-                content="4Ps Data Reports">
-                <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-              </SolutionCard>
-              <p className="f5 lh-copy measure-narrow washed-blue">
-                There is a need to be able to evaluate programs better, outside the existing accountability structures of government
-              </p>
+              <FeatureCard
+                heading='4Ps News'
+                content="4PBot knows what's going on in the community, with the latest news stories about 4Ps."
+                >
+                <ChatWindow rows={news}/>
+              </FeatureCard>
             </div>
-
           </div>
         </div>
-      </div>
-    );
-  }
-
-  old_getSolution() {
-    return (
-      <div className="tc bg-light-red light-blue pv5">
-        <h2 className="gray w6 f4 f3-ns lh-title mt0 mb3">Our Ideas</h2>
-        <p className="lh-copy w-50-ns w-75-m center f3 f2-ns b ml0 ph1">We're actively researching the 4Ps program, looking for places
-          to leverage technology to improve the 4Ps program for its clients.</p>
-        <p className="gray lh-copy w-50-ns center pt2 f4 f3-ns i ml0">Here's what we've got so far:</p>
-        <div className="dt-ns dt--fixed-ns gray">
-          <SolutionCard
-            heading="1"
-            content="A connected knowledge base where clients can easily ask questions and receive answers.">
-            <i className="fa fa-question-circle-o f1 pb4" aria-hidden="true"></i>
-          </SolutionCard>
-          <SolutionCard
-            heading="2"
-            content="An automated reminders tool to inform families of important family development sessions, health clinic visits and 4Ps news.">
-            <i className="fa fa-calendar f1 pb4" aria-hidden="true"></i>
-          </SolutionCard>
-          <SolutionCard
-            heading="3"
-            content="Use AI and chatbots to make filing a grievance and resoling the issue simpler and faster.">
-            <i className="fa fa-comments f1 pb4" aria-hidden="true"></i>
-          </SolutionCard>
-        </div>
-        <article className="mw7 center ph3 ph5-ns tc br2 pv5">
-          <h1 className="fw6 f3 f2-ns lh-title mt0 mb3">
-            Got an idea?
-          </h1>
-          <p className="fw1 f5 mt0 mb3">
-            We'd love to hear it.
-          </p>
-          <div>
-            <a
-              className="f6 br-pill bg-light-blue no-underline washed-red ba b--light-blue grow pv2 ph3 dib mr3"
-              href="mailto:lewisdaly@vesselstech.com?Subject=4PBot%Ideas"
-              >
-              Email Us
-            </a>
-          </div>
-        </article>
       </div>
     );
   }
 
   getPartnerWithUs() {
     return (
-      <div className="w-100 bg-white pt5 bg-lightest-blue light-red">
+      <div id='partner' className="w-100 bg-white bg-lightest-blue light-red">
         <article className="mw7 center ph3 ph5-ns tc br2 pv5">
           <h1 className="fw6 f3 lh-title mt0 mb3">
             Partner with us.
           </h1>
           <p className="fw1 f5 mt0 mb3">
-						Many companies have expressed interest in applying the 4PBot approach to their own projects and programs.<br/>Let’s work together on this!
+						Many companies have expressed interest in applying the 4PBot approach to their own projects and programs.<br/><br/>Let’s work together on this!
           </p>
           <div>
             <a
@@ -343,18 +292,17 @@ class Content extends Component {
 
 	getAboutVessels() {
 		return (
-			<div className="w-100 bg-white pt5 bg-light-red washed-blue">
-				<article className="mw7 center ph3 ph5-ns tc br2 pv5">
+			<div className="w-100 bg-white bg-light-red washed-blue">
+				<article className="mw7 center ph2 ph5-ns br2 pv5 tc">
 					<h2 className="fw6 f4 lh-title mt0 mb3">
 						About Vessels Tech
 					</h2>
-					<p>
-						Vessels Tech is a team of motivated technologists passionate about using technology to lift up the lives of others.
-						We could go and work for big tech companies, but we are more interested in helping people do things like access water or
-						basic financial services instead of selling people more stuff they probably don’t really need.
+          <p className="f5 measure-narrow pb2">
+            Vessels Tech is a team of motivated technologists passionate about using technology
+            to lift up the lives of others.
 					</p>
 					<a
-						className="f6 br-pill bg-light-red no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
+						className="f6 br-pill bg-light-blue no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
 						href="https://vesselstech.com"
 					>
 						Check us out
@@ -368,12 +316,10 @@ class Content extends Component {
     return (
       <div>
 				{this.getWhyChatbot()}
-				{this.getFocus()}
         {this.getFeatures()}
+        {this.getQuotes()}
 				{this.getBackground()}
-				{this.getQuotes()}
         {this.getPartnerWithUs()}
-        {/* {this.getSupportUs()} */}
 				{this.getSupportedBy()}
 				{this.getAboutVessels()}
       </div>
