@@ -17,9 +17,15 @@ class Banner extends Component {
                 A virtual assistant for Filipinos on social welfare.
               </h2>
 
-              <a className="f6 br-pill bg-light-red no-underline lightest-blue ba b--light-red grow pv2 ph4 dib mr3"
+              {/* <a className="f6 br-pill bg-light-red no-underline lightest-blue ba b--light-red grow pv2 ph4 dib mr3"
                  href="#features">
                 Learn More
+              </a> */}
+              <a className="f6 br-pill bg-light-red no-underline lightest-blue ba b--light-red grow pv2 ph4 dib mr3"
+                 href="https://m.me/4pbot"
+                 target="_blank"
+                 >
+                Chat Now!
               </a>
 
             </div>

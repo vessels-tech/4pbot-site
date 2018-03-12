@@ -18,7 +18,7 @@ class Content extends Component {
   getWhyChatBotItem(icon, title, text) {
     return (
       <div className="w-100 dtc-ns tc">
-        <article className="h5 h5-ns bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh2-ns">
+        <article className="h5 h5-ns bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh2-m mh4-ns">
           <div className="tc">
             <i className="material-icons">{icon}</i>
             <h1 className="f4">{title}</h1>
@@ -34,7 +34,7 @@ class Content extends Component {
 
   getWhyChatbotGrid() {
     return (
-      <div className="dt-ns dt--fixed-ns">
+      <div className="dt-ns dt--fixed-ns mt5">
         {this.getWhyChatBotItem('face', 'Conversational', "Talking to 4Pbot is just like talking to a real person!")}
         {this.getWhyChatBotItem('query_builder', 'Anytime, Anyplace', '4Pbot is always awake, and always willing to help!')}
         {this.getWhyChatBotItem('language', 'Multilingual', "4PBot can speak Tagalog, Cebuano/Bisaya, and English. ")}
@@ -47,10 +47,10 @@ class Content extends Component {
 
 		return (
 			<div className="bg-white w-100">
-				<div className="dt pt3 pb4">
+				<div className="dt pt5 pb4">
 					{getNiceHeading("A Chatbot?")}
 					<div className="lh-copy mv0 f5 ph4">
-						<p className="center f5 lh-copy measure-narrow">
+						<p className="center f5 lh-copy measure">
               4PBot talks with clients of the 4Ps program over Facebook Messenger, and is available for free on Facebook Free Basics.
             </p>
               {this.getWhyChatbotGrid()}
@@ -92,15 +92,15 @@ class Content extends Component {
             {getNiceHeading("The 4ps:")}
             <div className="lh-copy mv0 f5 ph4">
 
-              <p className="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure">
                 4Ps, or Pantawid Pamilyang Pilipino Program is a CCT program run by the Department of Social Welfare and Development.
               </p>
 
-              <p className="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure">
                 It supports over 4 million households, across 79 provinces with cash grants, based on a number of conditions, such as school attendance and attending health clinics.
               </p>
 
-              <p className="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure">
                 4Ps aims to break the cycle of poverty by keeping children aged 0-18 healthy and in school, so they can have a better future.
                 (<a
                  href="http://www.worldbank.org/en/country/philippines/brief/faqs-about-the-pantawid-pamilyang-pilipino-program"
@@ -121,7 +121,7 @@ class Content extends Component {
             {getNiceHeading("Why build 4pbot?")}
             <div className="lh-copy mv0 f5 ph4">
 
-              <p className="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure">
                 Low income people often find it difficult to navigate formal financial systems and services.
                  (<a
                   href="http://www.cgap.org/news/cgap-report-analyzes-digital-finance-risks-customers"
@@ -131,7 +131,7 @@ class Content extends Component {
                 </a>)
               </p>
 
-              <p className="f5 lh-copy measure-narrow">
+              <p className="f5 lh-copy measure">
                 4PBot assists clients of the 4Ps to better understand, navigate and speak up about the 4Ps.
               </p>
             </div>
@@ -245,6 +245,30 @@ class Content extends Component {
     );
   }
 
+  getLearnMore() {
+    return (
+      <div id='learn_more' className="w-100 bg-white bg-light-red w-100 mid-gray">
+        <article className="mw7 center ph3 ph5-ns tc br2 pv5">
+          <h1 className="fw6 f3 lh-title mt0 mb3">
+            Try it out!
+          </h1>
+          <p className="fw1 f5 mt0 mb3">
+            Why not just check out 4PBot for yourself?
+          </p>
+          <div>
+            <a
+              className="f6 br-pill bg-light-blue no-underline washed-blue ba b--light-red grow pv2 ph3 dib mr3"
+              href="https://m.me/4pbot"
+              target="_blank"
+            >
+               Chat with 4PBot Now.
+            </a>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
   getPartnerWithUs() {
     return (
       <div id='partner' className="w-100 bg-white bg-lightest-blue light-red">
@@ -285,7 +309,7 @@ class Content extends Component {
               href="http://eepurl.com/c1sEkj"
               target="blank"
             >
-							Fund 4Pbot’s future
+							Partner with us.
             </a>
           </div>
         </article>
@@ -320,6 +344,7 @@ class Content extends Component {
       <div>
 				{this.getWhyChatbot()}
         {this.getFeatures()}
+        {this.getLearnMore()}
         {this.getQuotes()}
 				{this.getBackground()}
         {this.getPartnerWithUs()}
